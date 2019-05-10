@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThreeDActivity">
+    <WebView
+        android:id="@+id/threed_web"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </WebView>
+    <ImageView
+        android:id="@+id/entity"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="75dp"
+        android:src="@mipmap/icon_entity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+    <ImageView
+        android:id="@+id/fly"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="75dp"
+        android:src="@mipmap/icon_fly"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+    <ImageView
+        android:id="@+id/survey"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="75dp"
+        android:src="@mipmap/icon_survey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+    <ImageView
+        android:id="@+id/reset"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="75dp"
+        android:src="@mipmap/icon_reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
+    <ImageView
+        android:id="@+id/full"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="75dp"
+        android:src="@mipmap/icon_full"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="75dp"
+        android:src="@mipmap/icon_navi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/shape_gradient"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/title_icon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="7.5dp"
+        android:src="@mipmap/whgh_logo"
+        android:layout_marginLeft="19dp"
+        app:layout_constraintEnd_toStartOf="@+id/title_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/title_text"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="13dp"
+        android:gravity="left|center_vertical"
+        android:text="魅力威海"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginTop="7.5dp"
+        app:layout_constraintStart_toEndOf="@+id/title_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

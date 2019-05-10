@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <group>
+        <item
+            android:id="@+id/travel"
+            android:icon="@mipmap/icon_travel"
+            android:title="乡村旅游"
+            />
+    </group>
+    <item
+        android:id="@+id/plan"
+        android:icon="@mipmap/icon_plan"
+        android:title="规划专题"
+        />
+    <item
+        android:id="@+id/tradition"
+        android:icon="@mipmap/icon_tradition"
+        android:title="传统村落"
+        />
+    <item
+        android:id="@+id/overview"
+        android:icon="@mipmap/icon_overall"
+        android:title="全景影像"
+        />
+    <item
+        android:id="@+id/measure"
+        android:icon="@mipmap/icon_measure"
+        android:title="量算功能"
+        />
+    <item
+        android:id="@+id/street"
+        android:icon="@mipmap/icon_street"
+        android:title="街景展示"
+        />
+    <item
+        android:id="@+id/horse"
+        android:icon="@mipmap/icon_house"
+        android:title="房产大数据"
+        />
+</group>
+</menu>

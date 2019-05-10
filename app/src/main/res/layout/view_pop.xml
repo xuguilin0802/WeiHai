@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="8dp"
+    android:paddingTop="13dp"
+    android:orientation="horizontal"
+    android:background="#ffffff"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/icon_browser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="312dp"
+        android:src="@drawable/browser"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="8dp" />
+    <ImageView
+        android:id="@+id/icon_baidu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="@id/icon_gaode"
+        app:layout_constraintLeft_toLeftOf="@id/icon_browser"
+        tools:layout_editor_absoluteY="8dp"
+        android:src="@drawable/baidu"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/icon_gaode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="312dp"
+        android:src="@drawable/gaode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/icon_baidu"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <TextView
+        android:id="@+id/text_gaode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="4dp"
+        android:text="高德地图"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon_gaode"
+        tools:ignore="MissingConstraints"
+        tools:layout_marginLeft="28dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginTop="4dp"
+        android:text="百度地图"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintLeft_toLeftOf="@+id/text_gaode"
+        app:layout_constraintRight_toRightOf="@+id/text_browser"
+        app:layout_constraintTop_toBottomOf="@id/icon_baidu"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_browser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="36dp"
+        android:text="浏览器"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon_baidu"
+        tools:ignore="MissingConstraints" />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;"charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>百度地图API调用尝试</title>
+    <style type="text/css">
+	html{height:100%}
+	body{height:100%;margin:0px;padding:0px}
+	#container{height:100%}
+</style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CFBg9rSaIpMcuL4f0P4UZxszvrb6hq5z"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js"></script>
+    <link href="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+	var map=new BMap.Map("container");
+	var point=new BMap.Point(116.83032962520545,36.54688885575475);
+	map.centerAndZoom(point,15);//新建map，并定义中心点和大小
+//	function addMarker(point,index){
+//		var myIcon=new BMap.Icon("location.png",new BMap.Size(23,25),{anchor:new BMap.Szie(10,25),imageOffset:new BMap.Szie(0,0-index*25)});
+//		var marker=new BMap.Marker(point,{icon:myIcon});
+//		map.addOverlay(marker);
+//	}
+	var marker = new BMap.Marker(point);        // 创建标注,即红色location点
+    map.addOverlay(marker);
+
+	marker.addEventListener("click", function()
+    {
+    android.poiDetails();
+    alert("您点击了标注");
+    });  //创建点击事件
+
+	marker.enableDragging();
+    marker.addEventListener("dragend", function(e)
+	{
+    alert("当前位置：" + e.point.lng + ", " + e.point.lat);
+    })   //使marker可拖动，并且拖动结束marker返回该点坐标
+
+
+	var polyline = new BMap.Polyline([
+    new BMap.Point(116.83421, 36.546889),
+    new BMap.Point(116.842834, 36.55692)
+    ],
+    {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}
+    );
+    map.addOverlay(polyline);//添加线
+
+	var opts = {
+    width : 20,     // 信息窗口宽度
+    height: 10,     // 信息窗口高度
+    title : "Hello"  // 信息窗口标题
+    }
+    var infoWindow = new BMap.InfoWindow("World", opts);  // 创建信息窗口对象
+    map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+
+	var ctrl = new BMapLib.TrafficControl({
+		showPanel: false //是否显示路况提示面板
+	});
+	map.addControl(ctrl);
+	ctrl.setAnchor(BMAP_ANCHOR_BOTTOM_RIGHT);//实现流量监控，交通疏通判断
+
+//	function showInfo(e){
+//		alert(e.point.lng+","+e.point.lat);
+//	}
+//	map.addEventlistener("click",showInfo);
+
+	var opts={type:BMAP_NAVIGATION_CONTROL_SMALL,offset: new BMap.Size(50, 50)}
+	map.addControl(new BMap.NavigationControl(opts));//平移缩放控件
+    map.addControl(new BMap.ScaleControl());    //比例尺，左上位置
+    map.addControl(new BMap.OverviewMapControl());//缩略地图 , 右下位置
+    map.addControl(new BMap.MapTypeControl()); //地图类型，右上位置
+
+	var myZoomCtrl=new ZoomControl();
+	map.addControl(myZoomCtrl);
+	function ZoomControl(){
+		this.defaultAnchor=BMAP_ANCHOR_TOP_LEFT;
+		this.defaultOffset=new BMap.Size(120,80);
+		ZoomControl.prototype=new BMap.Control();
+	}
+	ZoomControl.prototype.initialize=function(map){
+		var div=document.createElement("div");
+		div.appendChild(document.createTextNode("放大2级"));
+		div.style.cursor="pointer";
+		div.style.border="1px soild gray";
+		div.style.backgroundColor="white";
+		div.onclick=function(e){
+			map.zoomTo(map.getZoom()+2);
+		}
+		map.getContainer().appendChild(div);
+		return div;
+	}
+	var myZoomCtrl=new ZoomControl();
+	map.addControl(myZoomCtrl);//自定义的组件
+
+	map.enableScrollWheelZoom(true);//使得地图可以滑轮控制缩放
+//  	window.setTimeout(function(){
+//    map.panTo(new BMap.Point(116.409, 40.304));
+//}, 2000);//实现的是初始点到设定点的移动
+
+	</script>
+</body>
+</html>
+</syntaxhighlight>
